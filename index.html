@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Berkshire Hathaway — To'liq interaktiv (Oltin-Qora dizayn)</title>
+<meta name="description" content="Berkshire Hathaway haqida toʻliq interaktiv sahifa: tarix, Warren Buffett, boshqaruv, 400+ kompaniya, investitsiyalar, aksiyadorlar, konglomerat, O'zbekiston bilan bog'liqlik, bankrotlik tahlili." />
+<style>
+  :root{
+    --bg:#080809;
+    --panel:#0f1112;
+    --gold:#d4af37;
+    --muted:#b8b8b8;
+    --card:#0b0c0d;
+    --glass: rgba(212,175,55,0.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:linear-gradient(180deg,#050506,#0a0a0b);color:#eee;-webkit-font-smoothing:antialiased}
+  header{background:linear-gradient(90deg,#060708,#0e1416);padding:18px 22px;display:flex;align-items:center;gap:16px;border-bottom:3px solid rgba(212,175,55,0.06);position:sticky;top:0;z-index:90}
+  .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#2b2b2b,#1a1a1a);display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:800;font-size:18px;box-shadow:0 6px 24px rgba(0,0,0,0.6)}
+  header h1{margin:0;font-size:18px;color:var(--gold);letter-spacing:0.6px}
+  header p{margin:0;color:var(--muted);font-size:13px}
+
+  .wrap{max-width:1200px;margin:20px auto;padding:0 16px;display:grid;grid-template-columns:260px 1fr;gap:20px}
+  nav.menu{background:var(--panel);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);height:calc(100vh - 124px);position:sticky;top:72px;overflow:auto}
+  nav.menu h3{margin:0 0 12px 0;color:var(--gold)}
+  .menu button{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:8px;border:1px solid transparent;background:transparent;margin-bottom:8px;font-weight:700;color:#ddd;cursor:pointer}
+  .menu button.active{background:var(--glass);border-color:rgba(212,175,55,0.08);color:var(--gold)}
+  .menu .muted{font-size:13px;color:var(--muted);margin-top:8px}
+
+  main.content{min-height:520px}
+  .panel{background:linear-gradient(180deg,#0c0d0e,#0a0a0a);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+  .panel h2{margin:0 0 8px 0;color:var(--gold);font-size:22px}
+  .lead{color:var(--muted);margin-bottom:12px}
+  p{color:#e6e6e6;line-height:1.75;margin:0 0 12px 0}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .gallery img{width:100%;height:150px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.02);display:block;background:#0b0b0b}
+
+  .info{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+  .info .card{flex:1;min-width:180px;background:linear-gradient(180deg,#0b0c0d,#0a0a0a);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+  .info .card h4{margin:0;color:var(--gold);font-size:14px}
+  .info .card p{margin:6px 0 0 0;color:#e6e6e6;font-size:14px}
+
+  .diagram{margin-top:14px;padding:12px;border-radius:8px;background:linear-gradient(180deg,#0b0c0d,#0a0a0a);border:1px solid rgba(255,255,255,0.02)}
+
+  .controls{display:flex;gap:8px;align-items:center;margin-top:12px}
+  .btn{background:var(--gold);color:#0b0b0b;padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:800}
+  .btn.secondary{background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.12)}
+
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;padding-bottom:40px}
+
+  @media(max-width:840px){
+    .wrap{grid-template-columns:1fr;gap:14px}
+    nav.menu{height:auto;position:static;order:2}
+    .panel{min-height:unset}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">BH</div>
+    <div>
+      <h1>BERKSHIRE HATHAWAY — Loyiha </h1>
+      <p class="muted">Interaktiv ma'lumot: tarix, Buffett, boshqaruv, investitsiyalar va boshqalar</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <nav class="menu" aria-label="Bo'limlar">
+      <h3>Bo‘limlar</h3>
+      <button data-section="overview" class="active">Umumiy: kompaniya haqida</button>
+      <button data-section="history">1. Tarix (batafsil)</button>
+      <button data-section="buffett">2. Warren Buffett</button>
+      <button data-section="management">3. Boshqaruv va 400+ kompaniya</button>
+      <button data-section="investments">4. Investitsiyalar (asosiy pozitsiyalar)</button>
+      <button data-section="shareholders">5. Aksiyadorlar & Annual Meeting</button>
+      <button data-section="conglomerate">6. Konglomeratga aylanish</button>
+      <button data-section="uzbekistan">7. O'zbekiston bilan bog'liqlik</button>
+      <button data-section="stability">8. Bankrotlik va barqarorlik</button>
+      <div class="muted" style="margin-top:10px">Rasmlar: Wikimedia Commons (ommaviy manbalar). Matn: loyihaviy tahrir.</div>
+    </nav>
+
+    <main class="content">
+      <div class="panel" id="panel">
+        <!-- JS will inject content here -->
+      </div>
+    </main>
+  </div>
+
+<footer style="text-align: center; margin-top: 40px;">  <p>© 2025 — Loyiha. Bahodirjonov Xojiakbar!</p> <p>Berkshire Hathaway xaqida  </P>
+<a href="https://ru.wikipedia.org/wiki/Berkshire_Hathaway#:~:text=%D0%92%D0%B8%D0%BA%D0%B8%20%D0%BB%D1%8E%D0%B1%D0%B8%D1%82%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA%D0%B8,%D0%9C%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F" target="_blank"
+     style="display: inline-block; background-color: #ffd700; color: black; padding: 10px 20px;
+            border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;"> Ko‘proq ma’lumot olish ru.wikipedia→
+</a>
+<a href="https://docs.google.com/document/d/1yCMqKDtWGPYPeggxr9U0yoNwDceKbNFs/edit?usp=drivesdk&ouid=109634668221720224677&rtpof=true&sd=true" target="_blank"
+     style="display: inline-block; background-color: #ffd700; color: black; padding: 10px 20px;
+            border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;"> Ko‘proq ma’lumot olish uz.document →
+</a>
+
+</footer>
+
+<script>
+const sections = {
+  overview: {
+    title: "Umumiy: Berkshire Hathaway haqida",
+    lead: "Kompaniya — investitsion konglomerat; quyida batafsil bo‘limlar mavjud.",
+    body: `<p><strong>Berkshire Hathaway Inc.</strong> — AQShning eng yirik investitsion konglomeratlaridan biri bo‘lib, shtab-kvartirasi Nebraska shtatining Omaha shahrida joylashgan. Dastlab 19-asrda to‘qimachilik fabrikasi sifatida tashkil etilgan bu kompaniya, keyinchalik Warren Buffett boshqaruvi ostida butunlay o‘z faoliyat yo‘nalishini o‘zgartirgan.
+
+Buffett kompaniyani asta-sekin sug‘urta va investitsiya gigantiga aylantirdi. Hozirda Berkshire Hathaway 400 dan ortiq sho‘ba va sarmoya kompaniyalarini boshqaradi. Ularga GEICO (avtomobil sug‘urtasi), BNSF Railway (transport), Berkshire Energy, Lubrizol (kimyo sanoati), Duracell (batareyalar), Fruit of the Loom, Dairy Queen, See’s Candies kabi mashhur brendlar kiradi.
+
+Kompaniya shuningdek Apple, Coca-Cola, American Express va Bank of America kabi yirik xalqaro korporatsiyalarning ham aksiyalariga egalik qiladi. Buffettning boshqaruv uslubi uzoq muddatli sarmoya, ishonchli kompaniyalarni sotib olish va ularni mustaqil boshqarishga ruxsat berish tamoyillariga asoslanadi.
+
+<p>Natijada, Berkshire Hathaway bugungi kunda dunyodagi eng ishonchli va barqaror konglomeratlardan biri sifatida tanilgan. Uning aksiyalari AQSh fond bozorida eng qimmat va eng barqaror investitsiya aktivlaridan hisoblanadi</p>
+    <div class="info">
+      <div class="card"><h4>Asosiy sanalar</h4><p>1839 – tashkil etilish; 1955 – Berkshire Hathaway nomi; 1965 – Buffett nazorati.</p></div>
+      <div class="card"><h4>Bosh ofis</h4><p>Omaha, Nebraska, AQSh</p></div>
+      <div class="card"><h4>Hozirgi holat</h4><p>400+ sho‘ba; aktivlar va investitsiyalar global miqyosda.</p></div>
+    </div>
+
+    <div class="gallery" style="margin-top:12px">
+      <img src="https://image.cnbcfm.com/api/v1/image/105442211-1536596416260gettyimages-166662366.jpeg?v=1536596500" alt="Berkshire HQ"style="max-width:300px; height:auto;">
+      <img src="https://cdn.dribbble.com/userupload/36663372/file/original-8f0ee19fd0a38a47146593eaf11a2f4c.png?resize=752x&vertical=center" alt="Warren Buffett"style="max-width:300px; height:auto;">
+      <img src="https://www.investopedia.com/thmb/gf8358kFwvN36dCF81HhFhAh838=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Warren-Buffet-berkshire-hathaway-logos-6fd315eabd864002b61b618b44b63911.jpg" alt="Annual meeting"style="max-width:300px; height:auto;">
+    </div>`
+  },
+
+  history: {
+    title: "1. Tarix (batafsil)",
+    lead: "Boshqacha bosqichlar: 1839 dan Buffett davrigacha.",
+    body: `<p><strong>1839–1955:</strong>To‘qimachilik davri
+
+Kompaniyaga 1839-yilda Oliver Chace tomonidan Valley Falls Company sifatida asos solingan.
+
+Keyinchalik kompaniya Berkshire Fine Spinning va Hathaway Manufacturing korxonalari bilan birlashib, o‘sha davrning eng yirik to‘qimachilik ishlab chiqaruvchisiga aylandi.(23ta textil korxonasi,ulardan 8tasi Berkshire, 15tasi Hathaway)
+
+
+Asosiy faoliyat paxta matolari ishlab chiqarish, Yangi Angliya (AQSh) bozorini ta’minlash edi. </p>
+    <p><strong>1960–1965:</strong> Inqiroz va Buffettning kirib kelishi
+
+To‘qimachilik sanoati arzon ishchi kuchiga ega mamlakatlar bilan raqobatda yutqaza boshladi.
+
+Warren Buffett shu yillarda kompaniya aksiyalarini arzon narxda yig‘a boshlaydi.
+
+1965-yilda Buffett Berkshire Hathaway ustidan to‘liq nazoratni qo‘lga oladi.</p>
+    <p><strong>1965–1990:</strong> Sug‘urta va investitsiya davri
+
+Buffett strategik tarzda National Indemnity va GEICO kabi sug‘urta kompaniyalarini sotib oldi.
+
+Sug‘urta faoliyati orqali olingan “float” (mijoz mablag‘lari) kompaniyaga yangi investitsiya manbai yaratdi.
+
+Buffett bu mablag‘larni boshqa sohalardagi kompaniyalarni sotib olish uchun ishlatdi.</p>
+    <p><strong>1990–hozir:</strong> Global konglomerat bosqichi
+
+Berkshire Hathaway asta-sekin ko‘p tarmoqli konglomeratga aylandi.
+
+Bugungi kunda u BNSF Railway, Berkshire Hathaway Energy, Duracell, Dairy Queen, Fruit of the Loom, Lubrizol, Precision Castparts kabi yirik kompaniyalarga egalik qiladi.
+
+Shuningdek, Apple, Coca-Cola, American Express, Bank of America kabi korporatsiyalarda ulkan sarmoyaga ega.</p>
+
+    <div class="gallery" style="margin-top:12px">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg7VHug1Ke0mwUR39iMeL2TJzutJ6CwpxXqA_-aZ3cdQGQGSSdTuo6TQKI_DKHyww-crk&usqp=CAU" alt="Eski zavod"style="max-width:300px; height:auto;">
+      <img src="https://res.cloudinary.com/micronetonline/image/upload/c_crop,h_165,w_210,x_0,y_0/v1644442456/tenants/efe2fbcf-cb08-45ec-ae4c-5e33515c334e/6a336deeb6e942d0bf6b71843973a447/ni.png" alt="HQ"style="max-width:300px; height:auto;">
+      <img src="https://forexclub.pl/wp-content/uploads/2021/04/mlody-warren-buffett.jpeg" alt="Buffett yosh"style="max-width:300px; height:auto;">
+    </div>`
+  },
+
+  buffett: {
+    title: "2. Warren Buffett — shaxs va falsafa",
+    lead: "Biografiya, investitsiya tamoyillari va filantropiya.",
+    body: `<p>Warren Edward Buffett (t.1930) — 📈 Qiymat asosidagi investitsiya (Value Investing)
+
+Buffettning asosiy yondashuvi — “qiymat asosidagi investitsiya”, ya’ni kompaniyaning haqiqiy qiymati (intrinsic value) ni aniqlab, uni bozor bahosidan arzon holatda sotib olishdir.
+
+U bu falsafani o‘z ustozlari Benjamin Graham va David Doddning ta’limotlaridan o‘rgangan.
+
+Buffettning fikricha, investor:
+
+“Bozor qisqa muddatda ovoz beruvchi, uzoq muddatda esa tarozi.”
+ya’ni, vaqt o‘tishi bilan haqiqiy qiymat baribir o‘z aksini topadi.
+
+U soddaligi, barqaror daromad keltiruvchi bizneslar va uzoq muddatli investitsiyalar tarafdori.
+
+Har doim naqd oqim, boshqaruv sifati, va barqaror raqobat ustunligi (“moat”) ga alohida e’tibor berad.</p>
+
+    <p> Filantropiya:Buffett dunyodagi eng saxovatli insonlardan biri sifatida tanilgan.
+
+U o‘z boyligining 90% dan ortig‘ini xayriya qilishni va’da qilgan.
+
+Bill & Melinda Gates Foundation bilan hamkorlikda ta’lim, sog‘liqni saqlash va kambag‘allikka qarshi loyihalarga milliardlab dollar ajratgan.
+
+U shuningdek “The Giving Pledge” tashabbusining hamasoschisi — bu dastur orqali milliarderlardan o‘z boyliklarini insoniyat manfaatiga sarflashni so‘raydi.</p>
+
+    <div class="gallery" style="margin-top:12px">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4d7pQfByW8haXQEW1QD_u5M_COE5E-GkcBg&s"  alt="Buffett nutq"style="max-width:300px; height:auto;">
+      <img src="https://i.ytimg.com/vi/3Fluyh-2r4Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLApC4pqktOXkl-dXju0oXNO7HGH0g" alt="Buffett portrait"style="max-width:400px; height:auto;">
+      <img src="https://www.aljazeera.com/wp-content/uploads/2021/06/372695219.jpg?resize=1920%2C1440" alt="Buffett va Gates"style="max-width:300px; height:auto;">
+      
+    </div>`
+  },
+
+  management: {
+    title: "3. Boshqaruv va 400+ sho'ba kompaniya",
+    lead: "Qanday boshqariladi: mustaqil sho'ba + markaziy kapital boshqaruvi.",
+    body: `<p> Berkshire Hathaway’ning boshqaruv uslubi o‘ziga xos: kompaniya deyarli 400 dan ortiq sho‘ba va sarmoya kompaniyalarini o‘z ichiga oladi, lekin ularning har biri mustaqil ravishda boshqariladi. Har bir sho‘ba o‘z rahbariyatiga ega bo‘lib, kundalik faoliyat, ishlab chiqarish va xizmatlarni o‘zi nazorat qiladi.
+
+Markaziy bosh ofis esa strategik va moliyaviy qarorlarni qabul qiladi:
+
+kapital taqsimoti;
+
+yangi kompaniyalarni sotib olish;
+
+uzoq muddatli sarmoya strategiyasini belgilash;
+
+aksiyadorlarga foyda qaytarish (dividend emas, balki reinvestitsiya orqali).</p>
+
+    <p>👥 Asosiy shaxslar
+
+Warren Edward Buffett — 1965-yildan buyon CEO va Kengash raisi. Berkshire’ni butunlay yangi darajaga olib chiqqan. Kapital taqsimoti va investitsiya strategiyalarining bosh muallifi.
+
+Charlie Munger (1924–2023) — uzoq yillar davomida vitse-prezident, Buffettning eng yaqin maslahatchisi va “mantiqiy fikrlash” falsafasining asoschisi.
+
+Greg Abel — sug‘urta sohasidan tashqari barcha sho‘balarni boshqaradi. Buffettdan keyingi ehtimoliy merosxo‘r sifatida qaraladi.
+
+Ajit Jain — sug‘urta va qayta sug‘urta (reinsurance) faoliyatining rahbari. GEICO va Berkshire Re kabi kompaniyalarning muvaffaqiyatida asosiy rol o‘ynagan.
+
+Marc Hamburg — moliyaviy direktor (CFO), 1992-yildan beri kompaniyada.
+
+Howard Buffett — direktorlar kengashi a’zosi, ijtimoiy va ekologik loyihalarda faol.</p>
+
+    <div class="diagram">
+      <strong>Struktura (soddalashtirilgan):</strong>
+      <div style="margin-top:8px;color:var(--muted)">
+        Berkshire Hathaway (markaz) → Sug'urta · Energetika · Transport · Ishlab chiqarish · Iste'mol · Moliyaviy xizmatlar
+        <div style="margin-top:6px;font-size:13px">Misollar: GEICO, National Indemnity, BNSF, Berkshire Hathaway Energy, Duracell, Dairy Queen.</div>
+      </div>
+    </div>
+
+    <div class="gallery" style="margin-top:10px">
+      <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iD0cAClvJJhM/v0/-1x-1.webp" alt="BNSF"style="max-width:300px; height:auto;">
+      <img src="https://media.foxbusiness.com/BrightCove/854081161001/201805/168/854081161001_5780798656001_5780654977001-vs.jpg" alt="Dairy Queen"style="max-width:400px; height:auto;">
+      <img src="https://eor7ztmv4pb.exactdn.com/wp-content/uploads/2023/12/a-collage-of-logos-description-automatically-gene.png" alt="BHE"style="max-width:200px; height:auto;">
+      
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA5oYaYpbeH8LEao2ylspiIonkW8Opr8k_TQ&s" alt=""style="max-width:380px; height:auto;">
+   </div>`
+  },
+
+  investments: {
+    title: "4. Investitsiyalar (asosiy pozitsiyalar)",
+    lead: "Berkshire portfelidagi yirik va uzoq muddatli pozitsiyalar (misollar).",
+    body: `<p>Berkshire investitsiya portfelida bir nechta yirik "core" pozitsiyalar mavjud — ular kompaniya qiymatining katta qismini tashkil qiladi va Buffett tomonidan uzoq muddat ushlab kelinadi.</p>
+
+    <p><strong>Coca-Cola (KO):</strong> Buffett’ning eng mashhur “value investing” misollaridan biri.
+
+1988-yildan beri portfilda. Dividendlar orqali yiliga milliardlab dollar daromad keltiradi.</p>
+
+    <p><strong>Apple (AAPL):</strong>Berkshire’ning eng katta investitsiyasi — portfelining qariyb 40–45% qismini tashkil qiladi.
+
+Buffett Apple’ni “iste’molchi sodiqligi eng kuchli” kompaniya deb ataydi.
+
+Dastlab 2016-yilda xarid qilingan, hozirgi qiymati $150 milliarddan oshgan.</p>
+
+    <p><strong>American Express, Bank of America, Moody's, Kraft Heinz:</strong> Buffett 1960-yillardan beri sarmoya kiritgan.
+
+Bugungi kunda kompaniyaning taxminan 20% ulushi Berkshire’ga tegishli.</p>
+ 
+<div class="gallery" style="margin-top:12px">
+      <img src="https://image.vietstock.vn/2025/05/06/warren-buffett-thuong-vu_95692.png" alt="Coca Cola"style="max-width:300px; height:auto;">
+      <img src="https://images.mktw.net/im-79684641?width=1280&size=1.77777778" alt="Apple"style="max-width:300px; height:auto;">
+      <img src="https://cdn.mos.cms.futurecdn.net/LsZmRdV9s9ywJKMUrWthRM.jpg" alt="American Express"style="max-width:300px; height:auto;">
+      <img src="https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/07/0/0/Warrenn-Buffett-Bank-of-America.jpg?ve=1&tl=1" alt="Bank of America"style="max-width:300px; height:auto;">
+    </div>`
+
+
+  },
+
+  shareholders: {
+    title: "5. Aksiyadorlar & Annual Meeting",
+    lead: "Omahada o‘tkaziladigan yillik yig‘ilish va investorlar bilan muloqot.",
+    body: `<p>Berkshire Hathaway yillik aksiyadorlar yig‘ilishi — “Kapitalizm festivali”
+
+Berkshire Hathaway har yili may oyida Nebraska shtatining Omaha shahrida o‘zining yillik aksiyadorlar yig‘ilishini (Annual Shareholders Meeting) o‘tkazadi. Bu tadbir butun dunyo bo‘ylab investorlar uchun eng yirik va qiziqarli moliyaviy voqealardan biri sifatida tanilgan.
+
+📅 Asosiy jihatlar:
+
+Joy: CHI Health Center, Omaha (AQSh)
+
+Ishtirokchilar soni: 30 000 dan ortiq investorlar, jurnalistlar va iqtisodchilar.
+
+Nomlanishi: “Kapitalizm festivali” (The Capitalism Festival) deb ataladi — chunki u investitsiya va tadbirkorlik ruhining timsoliga aylangan.
+
+Format: Buffett va kompaniya rahbarlari (oldin Charlie Munger, hozir Greg Abel va Ajit Jain) auditoriya savollariga to‘g‘ridan-to‘g‘ri javob berishadi.
+
+Maqsad: Investorlar bilan ochiq muloqot, kompaniya strategiyasi va investitsiya falsafasini tushuntirish.</p>
+    
+    <p>"Shareholders Letter" — Warren Buffettning yillik xatlari kompaniyaning moliyaviy natijalari haqida ma’lumot berish bilan birga, uning investitsiya qarashlari va strategiyalarini ham tushuntiradi. Har bir xatda Buffett o‘z qarorlarining sabablari, bozorni qanday baholashi va investorlar uchun muhim saboqlarni beradi. Shu sababli, bu xatlar nafaqat kompaniya hisoboti, balki ko‘plab investorlar uchun real hayotdagi investitsiya darslari bo‘lib xizmat qiladi. Ular sabr-toqat, intizom va uzoq muddatli sarmoya qo‘yishning ahamiyatini o‘rgatadi.</p>
+    <div class="gallery" style="margin-top:12px">
+      <img src="https://www.investopedia.com/thmb/mWmFcB0I_YLSnSoC30f0gjNqxec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-2150879457-bf15d202a56846c7bce6c5e9952dbb71.jpg" alt="Annual meeting"style="max-width:400px; height:auto;">
+      <img src="https://www.lgt.com/resource/image/206664/landscape_ratio8x5/1380/863/fd7ec2417c3bf08da8f3ecf40176e615/F314AE8BCBF790B51B40587A64F4D483/23-415-buffettmunger-en.webp" alt="Charlie Munger"style="max-width:400px; height:auto;">
+      <img src="https://images.moneycontrol.com/static-mcnews/2022/06/Bill-Gates-and-Warren-Buffett_AFP.jpg?impolicy=website&width=1600&height=900" alt="Buffett va Gates"style="max-width:400px; height:auto;">
+
+    </div>`
+  },
+
+  conglomerate: {
+    title: "6. Konglomeratga aylanish (tarqalishi)",
+    lead: "Sug'urta floatidan kengayish: yirik aktivlarni sotib olish.",
+    body: `<p>Berkshire Hathaway sug'urta biznesidan olingan “float” mablag‘ini boshqa sohalarga katta xaridlar qilishda ishlatadi. Bu float – sug'urta kompaniyalari mijozlardan oldindan olgan, lekin hali da’vo qilinmagan pul mablag‘i bo‘lib, Buffett uni vaqtincha mablag‘ sifatida qabul qilib, uzoq muddatli va barqaror aktivlarga sarmoya qiladi.
+
+Bu yondashuv tufayli Berkshire nafaqat sug'urta biznesini rivojlantirdi, balki boshqa sohalarda ham katta muvaffaqiyatlarga erishdi. Masalan, kompaniya BNSF temir yo‘llari, Berkshire Hathaway Energy (energetika sohasida), Duracell (batareyalar), Dairy Queen (ovqat va xizmatlar), Fruit of the Loom (kiyim-kechak) va boshqa ko‘plab sho‘balarni sotib oldi.
+
+Har bir sho‘ba odatda mustaqil boshqariladi, ya’ni kundalik operatsiyalar va menejment Berkshire tomonidan aralashmagan holda ishlaydi. Shu bilan birga, umumiy strategiya, sarmoya taqsimoti va moliyaviy nazorat Berkshire tomonidan boshqariladi. Buffettning bu yondashuvi sho‘balarni erkin rivojlanishiga imkon berib, bir vaqtning o‘zida kompaniya kapitalining samarali ishlashini ta’minlaydi.
+
+Bu strategiya Berkshirega nafaqat daromad keltirdi, balki investorlar uchun ham uzoq muddatli barqaror qiymat yaratdi. Shu tariqa, sug'urta floatidan oqilona foydalanish kompaniyaning yirik va barqaror aktivlar portfelini shakllantirishda asosiy omil bo‘ldi</p>
+
+
+    <div class="gallery" style="margin-top:12px">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2afWtpVWzpUn_TGdkDoXc1s3GcrJmJTYww&s" alt="BNSF"style="max-width:400px; height:auto;">
+      <img src="https://www.argusleader.com/gcdn/-mm-/176d7dcc52bacd0bbd7ec37f41c311c77bc5715a/c=37-1-492-258/local/-/media/SiouxFalls/SiouxFalls/2014/04/30//1398868488000-berkshire-hathaway-energy-company.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" alt="BHE"style="max-width:500px; height:auto;">
+      <img src="https://as1.ftcdn.net/jpg/04/56/81/88/1000_F_456818862_MtFQrTX9RRD3SafkuAArU4YdD4nhioTj.jpg" alt="Dairy Queen"style="max-width:400px; height:auto;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSehY-8Kox9xWa7nOyhYC_DnWtCz52vykEy5Q&s" alt="Duracell"style="max-width:300px; height:auto;">
+    </div>`
+
+  },
+
+  uzbekistan: {
+    title: "7. O'zbekiston bilan bog'liqlik",
+    lead: "Bevosita aloqalar yo'qligi, ammo model mosligi va o'rnaklar.",
+    body: `<p>Portfeldagi xalqaro kompaniyalar
+Berkshire Hathaway portfelida AQShdan tashqarida bir necha kompaniyalar bor, jumladan, Yaponiyada faoliyat yuritadigan savdo (trading) korporatsiyalari — Mitsubishi, Sumitomo, Marubeni, Mitsui va Itochu. 
+Ushbu kompaniyalar O‘zbekistonda energiya, infratuzilma, ishlab chiqarish, tozalash va chiqindi suvlarni tozalash loyihalarida ishtirok etad.</p>
+
+<p>Investitsiyalar loyihalari 2024-yilda:</p>
+
+  <div style="overflow-x:auto; margin-top:12px;">
+  <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; min-width:600px;">
+    <thead>
+      <tr style="background-color:#4CAF50; color:white; text-align:left;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Kompaniya</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Loyiha / faoliyat O‘zbekistonda</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Qisqacha izoh</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Manba</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Sumitomo Corporation & ACWA Power</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">O‘zbekistonda 2,5 GW quyosh va shamol energiya aktivlarini sotib olish rejasi va 968 MW batareya zaxirasi (~4,2 mlrd $ investitsiya)</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Loyihaning TimesCA’da keltirilganligi ta’kidlangan</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">The Times Of Central Asia</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">TAQA Water Solutions, Marubeni, SUEZ</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Toshkentda eng katta chiqindi suvlarni tozalash inshootini qurish (~1 mlrd $)</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">TimesCA’da xabar qilingan</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">The Times Of Central Asia</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Mitsubishi</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Gaz yoqilg‘i elektr stantsiyalari uchun zamonaviy texnika va uskunalar yetkazib berish (Navoi va Sirdarya)</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">TimesCA’da ta’kidlangan</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">The Times Of Central Asia</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">BYD Uzbekistan JV</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">2024-yilda zavod ishga tushirilgan — elektromobillar ishlab chiqarish boshlangan</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">TimesCA ma’lumotida aytilgan</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">The Times Of Central Asia</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;">Itochu & Mitsui</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">Keyinchalik O‘zbekistonda energetika, infratuzilma yoki mineral resurslarga investitsiya qilish ehtimoli (taxmin)</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">TimesCA prognozi sifatida keltirilgan</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">The Times Of Central Asia</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <div class="gallery" style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+  <img src="https://m.media-amazon.com/images/I/61GwA5lyHjL.jpg" style="max-width:400px; height:auto;">
+  <img src="https://data.daryo.uz/media/2024/10/18/IMG_1091-p1jWaem5.jpeg" style="max-width:400px; height:auto;">
+  <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/TSW2ZPSRVRN3HM6EIACYHWH7CU.jpg" alt="Power station" style="max-width:400px; height:auto;">
+</div>`
+},
+
+  stability: {
+    title: "8. Bankrotlik xavfi va moliyaviy barqarorlik",
+    lead: "Tarixiy sinovlar, ammo bankrotlik yo'q — nima sabab?",
+    body: `<p>Berkshire Hathaway kompaniyasi o‘z tarixi davomida bir necha moliyaviy va iqtisodiy inqirozlarni boshdan kechirgan, ammo hech qachon bankrotlikka uchramagan. Bunga asosiy sabablar quyidagilar:<P>
+
+<P>Diversifikatsiya
+Kompaniya turli sohalarga sarmoya kiritgan: sug'urta, transport, energetika, iste’mol tovarlari, sanoat va texnologiya. Shu sababli, bir sohadagi zararlarni boshqa sohalardagi daromad qoplab beradi.<P>
+
+<P>Sug'urta float’i
+Sug’urta biznesidan keladigan vaqtincha mablag‘lar boshqa investitsiyalarda ishlatiladi. Bu mablag‘lar kompaniyaga likvidlikni oshirish va yuqori daromadli loyihalarda foydalanish imkonini beradi.<P>
+
+<P>Konservativ qarz siyosati
+Buffett kompaniya qarzlarini minimal darajada ushlab turadi. Shu sababli, majburiyatlar boshqariladigan va barqaror bo‘ladi.<P>
+
+<P>Katta likvid aktivlar
+Kompaniyada doim katta miqdorda naqd pul va tez likvid bo‘ladigan aktivlar mavjud. Bu inqiroz paytida tezkor harakat qilish va imkoniyatlardan foydalanish imkonini beradi.<P>
+
+<p>Tarixiy misollar:<P>
+
+<P>P2008-yilgi global moliyaviy inqiroz: Berkshire katta miqdorda naqd pul va likvid aktivlarga ega bo‘lib, strategik sotib olish va investitsiyalar orqali imkoniyatlardan foydalangan.<P>
+
+<P>2020-yil COVID-19 pandemiyasi: Pandemiya vaqtida zararlar bo‘lgan bo‘lsa-da, likvid aktivlar va diversifikatsiya tufayli kompaniya barqarorligini saqlab qolgan.<P>
+
+<P>Bozor o‘zgarishlari (2023): Investitsiya portfeli diversifikatsiya tufayli xavfsiz bo‘lib, kapitalni himoya qilgan.</p>
+
+    <p>2008 va 2020 inqirozlarida kompaniya strategik investitsiyalar orqali imkoniyatlardan foydalandi. Hozirgi balans va kredit reytinglari kompaniya barqarorligini qo'llab-quvvatlaydi.</p>
+
+<div style="overflow-x:auto; margin-top:12px;">
+  <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; min-width:600px;">
+    <thead>
+      <tr style="background-color:#4CAF50; color:white; text-align:left;">
+        <th style="padding:10px; border:1px solid #ddd;">Yil / Davr</th>
+        <th style="padding:10px; border:1px solid #ddd;">Holat / Hodisa</th>
+        <th style="padding:10px; border:1px solid #ddd;">Tavsif / Ma’lumot</th>
+        <th style="padding:10px; border:1px solid #ddd;">Manba</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">2020 1-chorak</td>
+        <td style="padding:10px; border:1px solid #ddd;">$49.7 milliard zarar</td>
+        <td style="padding:10px; border:1px solid #ddd;">Pandemiya boshlanishi bilan kompaniya rekord darajadagi zarar ko‘rdi.</td>
+        <td style="padding:10px; border:1px solid #ddd;">Reuters</td>
+      </tr>
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">2020 mart</td>
+        <td style="padding:10px; border:1px solid #ddd;">Katta likvid aktivlar</td>
+        <td style="padding:10px; border:1px solid #ddd;">Berkshire $104.2 milliard qarz va $168.3 milliard sug‘urta majburiyatlariga ega edi.</td>
+        <td style="padding:10px; border:1px solid #ddd;">berkshirehathaway.com</td>
+      </tr>
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">2020 bahor</td>
+        <td style="padding:10px; border:1px solid #ddd;">Sotib olishlar to‘xtatilgan</td>
+        <td style="padding:10px; border:1px solid #ddd;">Pandemiya sababli kompaniya aksiyalarni qayta sotib olishni vaqtincha to‘xtatdi.</td>
+        <td style="padding:10px; border:1px solid #ddd;">Reuters</td>
+      </tr>
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">2020 2-yarmi</td>
+        <td style="padding:10px; border:1px solid #ddd;">$11.7 milliard foyda</td>
+        <td style="padding:10px; border:1px solid #ddd;">Bir yil ichida kompaniya $49.7 milliard zararini $11.7 milliard foydaga aylantirdi.</td>
+        <td style="padding:10px; border:1px solid #ddd;">Investing.com</td>
+      </tr>
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">2021</td>
+        <td style="padding:10px; border:1px solid #ddd;">$6.6 milliard aksiyalarni qayta sotib olish</td>
+        <td style="padding:10px; border:1px solid #ddd;">Tiklanish jarayonida kompaniya aksiyalarni qayta sotib olishni davom ettirdi.</td>
+        <td style="padding:10px; border:1px solid #ddd;">Reuters</td>
+      </tr>
+      <tr>
+        <td style="padding:10px; border:1px solid #ddd;">2022</td>
+        <td style="padding:10px; border:1px solid #ddd;">$11.57 milliard Alleghany sotib olish</td>
+        <td style="padding:10px; border:1px solid #ddd;">Pandemiya ta'sirida bo‘lsa-da, kompaniya yangi investitsiyalarni amalga oshirdi.</td>
+        <td style="padding:10px; border:1px solid #ddd;">BVA Group</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+<div class="gallery" style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+  <img src="https://i.ytimg.com/vi/CyxTh3Gi7q8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAqZfcxmo_TQ_oxHPbKZeaO0v2hLQ" style="max-width:400px; height:auto;">
+  <img src="https://i.ytimg.com/vi/zWhYXYrK1BI/maxresdefault.jpg" style="max-width:400px; height:auto;">
+  <img src="https://i.ytimg.com/vi/kNpqsfDgXzI/maxresdefault.jpg" alt="Power station" style="max-width:400px; height:auto;">
+</div>
+`
+
+
+  }
+};
+
+// render function
+function renderSection(key){
+  const panel = document.getElementById('panel');
+  const s = sections[key];
+  panel.innerHTML = `<h2>${s.title}</h2>
+    <p class="lead">${s.lead}</p>
+    <div>${s.body}</div>
+    <div class="controls"><button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Boshiga</button><button class="btn secondary" onclick="downloadHTML()">HTML-ni yuklab olish</button></div>`;
+  // active button
+  document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+  const btn = document.querySelector('.menu button[data-section="'+key+'"]');
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top: document.querySelector('.panel').offsetTop-12, behavior:'smooth'});
+}
+
+function showSection(key){ renderSection(key); }
+
+// attach menu events
+document.querySelectorAll('.menu button').forEach(b=>{
+  b.addEventListener('click', ()=> showSection(b.getAttribute('data-section')));
+});
+
+// initial render
+renderSection('overview');
+
+// optional: let user save the current HTML
+function downloadHTML(){
+  const html = document.documentElement.outerHTML;
+  const blob = new Blob([html], {type: 'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'berkshire_project.html';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
+  
